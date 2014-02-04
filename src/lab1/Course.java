@@ -17,6 +17,8 @@ public abstract class Course {
     private String courseNumber;
     private double credits;
     private String prerequisites;
+    private int section;
+    private int numEnrolled;
     
     public String getCourseNumber() {
         return courseNumber;
@@ -56,4 +58,47 @@ public abstract class Course {
         }
         this.courseName = courseName;
     }
+    
+    public void setPrerequisites(String prerequisites) {
+        if(prerequisites == null || prerequisites.length() == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: prerequisites cannot be null of empty string");
+            System.exit(0);
+        }
+        this.prerequisites = prerequisites;
+    }
+    
+    public String getPrerequisites(){
+        return this.prerequisites;
+    }
+
+    public int getSection() {
+        return section;
+    }
+
+    public void setSection(int section) {
+        if(section >= 1){
+            this.section = section;
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "Error: section numbers must start from 1");
+            System.exit(0);
+        }
+    }
+
+    public int getNumEnrolled() {
+        return numEnrolled;
+    }
+
+    public void setNumEnrolled(int numEnrolled) {
+        if(numEnrolled > 0){
+            this.numEnrolled = numEnrolled;
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "Error: class cannot be empty");
+            System.exit(0);
+        }
+    }
+    
+    
 }
