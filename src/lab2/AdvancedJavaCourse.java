@@ -8,11 +8,13 @@ import javax.swing.JOptionPane;
  * @author      your name goes here
  * @version     1.00
  */
-public class AdvancedJavaCourse {
+public class AdvancedJavaCourse implements Course {
     private String courseName;
     private String courseNumber;
     private double credits;
     private String prerequisites;
+    private int sectionNum;
+    private int studentsEnrolled;
 
     public AdvancedJavaCourse(String courseName, String courseNumber) {
         this.setCourseName(courseName);
@@ -71,5 +73,20 @@ public class AdvancedJavaCourse {
         this.courseName = courseName;
     }
 
+    public void setStudentsEnrolled(int enrolled){
+        this.studentsEnrolled = enrolled;
+    }
+    
+    public int getStudentsEnrolled(){
+        return this.studentsEnrolled;
+    }
+    
+    public void setSectionNum(int section){
+        this.sectionNum = section;
+    }
+    
+    public int getSectionNum(){
+        return this.sectionNum;
+    }
     
 }

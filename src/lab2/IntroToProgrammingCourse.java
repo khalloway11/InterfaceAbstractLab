@@ -12,6 +12,9 @@ public class IntroToProgrammingCourse {
     private String courseName;
     private String courseNumber;
     private double credits;
+    private String prerequisites;
+    private int sectionNum;
+    private int studentsEnrolled;
 
     public IntroToProgrammingCourse(String courseName, String courseNumber) {
         this.setCourseName(courseName);
@@ -44,6 +47,19 @@ public class IntroToProgrammingCourse {
         this.credits = credits;
     }
 
+    public String getPrerequisites() {
+        return prerequisites;
+    }
+
+    public void setPrerequisites(String prerequisites) {
+        if(prerequisites == null || prerequisites.length() == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: prerequisites cannot be null of empty string");
+            System.exit(0);
+        }
+        this.prerequisites = prerequisites;
+    }
+
     public String getCourseName() {
         return courseName;
     }
@@ -55,6 +71,22 @@ public class IntroToProgrammingCourse {
             System.exit(0);
         }
         this.courseName = courseName;
+    }
+
+    public void setStudentsEnrolled(int enrolled){
+        this.studentsEnrolled = enrolled;
+    }
+    
+    public int getStudentsEnrolled(){
+        return this.studentsEnrolled;
+    }
+    
+    public void setSectionNum(int section){
+        this.sectionNum = section;
+    }
+    
+    public int getSectionNum(){
+        return this.sectionNum;
     }
 
     
