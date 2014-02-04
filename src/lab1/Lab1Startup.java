@@ -12,8 +12,13 @@ package lab1;
  */
 public class Lab1Startup {
     public static void main(String[] args){
-        IntroToProgrammingCourse introToProg = new IntroToProgrammingCourse("Intro Course", "152-141");
+        IntroToProgrammingCourse introProg = new IntroToProgrammingCourse("Introduction to Programming", "152-141");
         IntroJavaCourse introJava = new IntroJavaCourse("Intro to Java", "152-150");
         AdvancedJavaCourse advJava1 = new AdvancedJavaCourse("Advanced Java", "152-180");
+        
+        introJava.setNumEnrolled(12);
+        introJava.setSection(1);
+        introJava.setPrerequisites(introProg.getCourseName());
+        System.out.println(introJava.getPrerequisites());
     }
 }
